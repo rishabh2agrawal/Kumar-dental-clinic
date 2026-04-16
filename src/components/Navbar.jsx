@@ -35,7 +35,7 @@ export default function Navbar() {
           "fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl rounded-full transition-all duration-300",
           isScrolled
             ? "glass shadow-lg py-2.5 px-6"
-            : "bg-white/5 backdrop-blur-sm py-3.5 px-6"
+            : "glass py-3.5 px-6 shadow-sm"
         )}
       >
         <div className="flex items-center justify-between">
@@ -52,8 +52,7 @@ export default function Navbar() {
             </div>
             <span
               className={cn(
-                "font-bold text-base tracking-tight hidden sm:block transition-colors",
-                isScrolled ? "text-primary" : "text-white"
+                "font-bold text-base tracking-tight hidden sm:block transition-colors text-primary"
               )}
             >
               Kumar Dental Care
@@ -67,10 +66,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium transition-colors",
-                  isScrolled
-                    ? "text-text-main hover:text-primary"
-                    : "text-white/80 hover:text-white"
+                  "text-sm font-medium transition-colors text-text-main hover:text-primary"
                 )}
               >
                 {link.name}
@@ -85,7 +81,7 @@ export default function Navbar() {
               "hidden md:inline-flex px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300",
               isScrolled
                 ? "glass text-primary hover:shadow-[0_0_15px_rgba(37,189,179,0.25)]"
-                : "bg-white/15 backdrop-blur-sm text-white border border-white/20 hover:bg-white/25"
+                : "bg-primary text-white shadow hover:shadow-lg"
             )}
           >
             Book Appointment
@@ -95,8 +91,7 @@ export default function Navbar() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={cn(
-              "md:hidden w-10 h-10 rounded-full flex items-center justify-center transition-colors",
-              isScrolled ? "text-slate-700" : "text-white"
+              "md:hidden w-10 h-10 rounded-full flex items-center justify-center transition-colors text-slate-700 hover:bg-slate-100"
             )}
             aria-label="Toggle menu"
           >

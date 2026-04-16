@@ -12,8 +12,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} antialiased selection:bg-primary/30 selection:text-primary`}>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body
+        suppressHydrationWarning
+        className={`${inter.className} antialiased selection:bg-primary/30 selection:text-primary`}
+      >
         <Navbar />
         {children}
         <Footer />

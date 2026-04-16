@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import GlassButton from "./GlassButton";
 import { Phone } from "lucide-react";
 
+const DENTAL_WALKTHROUGH_VIDEO =
+  "/Indian_People_Video_Generation.mp4";
+
 const FADE_UP = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 60, damping: 14 } },
@@ -11,25 +14,21 @@ const FADE_UP = {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative w-full min-h-screen h-[100dvh] flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
-        className="absolute inset-0 w-full h-full object-cover"
-        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Crect fill='%23f0fafa' width='1920' height='1080'/%3E%3C/svg%3E"
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        <source
-          src="https://videos.pexels.com/video-files/3209211/3209211-uhd_2560_1440_25fps.mp4"
-          type="video/mp4"
-        />
+        <source src={DENTAL_WALKTHROUGH_VIDEO} type="video/mp4" />
       </video>
 
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/50 to-slate-900/70" />
+      {/* Subtle overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-black/40 z-0" />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
