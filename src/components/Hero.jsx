@@ -2,66 +2,105 @@
 
 import { motion } from "framer-motion";
 import GlassButton from "./GlassButton";
-import AnimatedLogoMark from "./AnimatedLogoMark";
+import { Phone } from "lucide-react";
 
-const FADE_UP_ANIMATION_VARIANTS = {
+const FADE_UP = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50, damping: 10 } },
+  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 60, damping: 14 } },
 };
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
-      {/* Abstract Background Blobs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" />
-      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-secondary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000" />
-      <div className="absolute -bottom-8 left-1/3 w-96 h-96 bg-accent/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000" />
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 w-full h-full object-cover"
+        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1080'%3E%3Crect fill='%23f0fafa' width='1920' height='1080'/%3E%3C/svg%3E"
+      >
+        <source
+          src="https://videos.pexels.com/video-files/3209211/3209211-uhd_2560_1440_25fps.mp4"
+          type="video/mp4"
+        />
+      </video>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      {/* Dark gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/50 to-slate-900/70" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <motion.div
           initial="hidden"
           animate="show"
-          viewport={{ once: true }}
           variants={{
             hidden: {},
-            show: {
-              transition: {
-                staggerChildren: 0.15,
-              },
-            },
+            show: { transition: { staggerChildren: 0.15 } },
           }}
           className="flex flex-col items-center"
         >
-          <AnimatedLogoMark />
-
-          <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="inline-block mb-4 px-4 py-1.5 rounded-full glass-dark text-primary text-sm font-semibold tracking-wide shadow-sm">
-            Welcome to Kumar Clinic
-          </motion.div>
-          
-          <motion.h1 
-            variants={FADE_UP_ANIMATION_VARIANTS} 
-            className="text-5xl md:text-7xl font-extrabold text-slate-800 tracking-tight leading-tight mb-6"
+          {/* Badge */}
+          <motion.div
+            variants={FADE_UP}
+            className="inline-block mb-6 px-5 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium tracking-wide"
           >
-            Complete Dental & Eye Care <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Under One Roof
+            Kumar Dental Care
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            variants={FADE_UP}
+            className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6"
+          >
+            Advanced Dental Care for{" "}
+            <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+              a Healthier Smile
             </span>
           </motion.h1>
 
-          <motion.p 
-            variants={FADE_UP_ANIMATION_VARIANTS} 
-            className="mt-4 text-lg md:text-xl text-text-main max-w-2xl mx-auto mb-10 leading-relaxed"
+          {/* Subtext */}
+          <motion.p
+            variants={FADE_UP}
+            className="mt-2 text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Experience premium medical care with state-of-the-art technology. 
-            We bring healthy smiles and clear vision to you and your family.
+            Painless, precise, and patient-first treatments
           </motion.p>
 
-          <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-            <GlassButton variant="primary">Book Appointment</GlassButton>
-            <GlassButton variant="secondary">Explore Services</GlassButton>
+          {/* CTAs */}
+          <motion.div
+            variants={FADE_UP}
+            className="flex flex-col sm:flex-row gap-4 items-center justify-center"
+          >
+            <GlassButton variant="primary" href="#appointment">
+              Book Appointment
+            </GlassButton>
+            <GlassButton variant="outline" href="tel:+919876543210">
+              <Phone size={16} className="mr-2" />
+              Call Now
+            </GlassButton>
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-1.5"
+        >
+          <div className="w-1.5 h-1.5 rounded-full bg-white/60" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
