@@ -6,28 +6,51 @@ import { Star } from "lucide-react";
 const REVIEWS = [
   {
     name: "Ravi Shankar",
-    text: "Got my dental implants done here. Professional staff and absolutely painless procedure. Highly recommended!",
+    text: "Got my dental implants done here. Professional staff and absolutely painless procedure. Highly recommended.",
     rating: 5,
+    featured: true,
   },
   {
     name: "Sneha Patel",
-    text: "I was always scared of dentists, but the painless extraction here changed my perspective entirely. Amazing experience!",
+    text: "I was always scared of dentists, but the painless extraction here changed my perspective completely.",
     rating: 5,
   },
   {
     name: "Amit Desai",
-    text: "Very aesthetic clinic and top-notch equipment. The consultation was thorough and the doctors were incredibly patient.",
+    text: "Very modern clinic and top-notch equipment. Consultation was thorough and the doctors were incredibly patient.",
     rating: 5,
+    tall: true,
   },
   {
     name: "Priya Mehta",
-    text: "My teeth whitening results have been incredible. The entire process was quick, comfortable, and worth every penny.",
+    text: "My teeth whitening results were incredible. The process was quick, comfortable, and worth every visit.",
     rating: 5,
   },
   {
     name: "Karan Verma",
-    text: "Dr. Kumar is the best dentist I've visited. He explained everything clearly and the root canal was completely painless.",
-    rating: 4,
+    text: "Dr. Kumar explained everything clearly and made my root canal completely painless.",
+    rating: 5,
+  },
+  {
+    name: "Neha Iyer",
+    text: "The team is warm and organized. Appointments are always on time and treatment is very gentle.",
+    rating: 5,
+  },
+  {
+    name: "Arjun Nair",
+    text: "Best dental experience in the city. Clean environment, transparent pricing, and very skilled doctors.",
+    rating: 5,
+    tall: true,
+  },
+  {
+    name: "Pooja Malhotra",
+    text: "I got aligners here and saw visible results faster than expected. Great guidance throughout.",
+    rating: 5,
+  },
+  {
+    name: "Vikas Rao",
+    text: "From checkup to treatment, everything felt premium and safe. My family now visits this clinic regularly.",
+    rating: 5,
   },
 ];
 
@@ -47,31 +70,57 @@ export default function Testimonials() {
       {/* Subtle background tint */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.03] to-transparent pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 mb-12 text-center relative z-10">
+      <div className="max-w-7xl mx-auto px-6 mb-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="text-center"
         >
+          <p className="text-primary font-semibold text-sm tracking-wider uppercase mb-3">
+            Reputation You Can Trust
+          </p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-4">
             What Our Patients Say
           </h2>
-          <p className="text-text-main max-w-lg mx-auto">
+          <p className="text-text-main max-w-2xl mx-auto">
             Real reviews from people who trust us with their smiles.
           </p>
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.08 }}
+          className="mt-8 flex flex-wrap justify-center items-center gap-3"
+        >
+          <div className="glass-card rounded-full px-5 py-2.5 text-slate-800 font-bold text-sm md:text-base">
+            Rated 4.9 <span className="text-yellow-400">★</span> on Google
+          </div>
+          <div className="glass-card rounded-full px-5 py-2.5 text-text-main text-sm md:text-base font-medium">
+            Trusted by hundreds of happy patients
+          </div>
+          <div className="glass-card rounded-full px-5 py-2.5 text-primary text-sm md:text-base font-semibold">
+            100+ Reviews
+          </div>
+        </motion.div>
       </div>
 
-      <div className="flex flex-nowrap overflow-x-auto pb-6 px-6 max-w-7xl mx-auto gap-5 snap-x snap-mandatory scrollbar-hide relative z-10">
+      <div className="px-6 max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {REVIEWS.map((review, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}
             transition={{ duration: 0.45, delay: idx * 0.08 }}
-            className="snap-center min-w-[300px] md:min-w-[360px] glass-card p-7 rounded-2xl shrink-0 flex flex-col justify-between"
+            whileHover={{ y: -5 }}
+            className={`glass-card p-7 rounded-2xl flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_34px_rgba(37,189,179,0.14)] ${
+              review.tall ? "min-h-[260px]" : "min-h-[220px]"
+            } ${review.featured ? "sm:col-span-2 lg:col-span-1" : ""}`}
           >
             <div>
               {/* Google badge + stars */}
@@ -105,6 +154,7 @@ export default function Testimonials() {
             </div>
           </motion.div>
         ))}
+        </div>
       </div>
     </section>
   );

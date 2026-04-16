@@ -23,68 +23,85 @@ const INFO_ITEMS = [
 
 export default function VisitUs() {
   return (
-    <section id="visit" className="py-24 max-w-7xl mx-auto px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="text-center mb-14"
-      >
-        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-4">
-          Visit Us
-        </h2>
-        <p className="text-text-main max-w-lg mx-auto">
-          We&apos;re conveniently located and ready to welcome you.
-        </p>
-      </motion.div>
-
-      <div className="flex flex-col lg:flex-row gap-8">
-        {/* Info Cards */}
-        <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
-          {INFO_ITEMS.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass-card rounded-2xl p-6 flex items-start gap-4"
-            >
-              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                <item.icon size={22} />
-              </div>
-              <div>
-                <h4 className="font-bold text-slate-800 mb-1">{item.title}</h4>
-                {item.lines.map((line, j) => (
-                  <p key={j} className="text-sm text-text-main leading-relaxed">
-                    {line}
-                  </p>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Google Maps Embed */}
+    <section id="visit" className="py-24 w-full overflow-hidden">
+      <div className="w-full px-4 md:px-6 lg:px-12 xl:px-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="order-1 h-full min-h-[380px] md:min-h-[460px] lg:min-h-[620px] py-8 md:py-10"
+        >
+          <div className="h-full flex flex-col justify-center">
+            <div className="mb-8 md:mb-10">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-3">
+                Visit Us
+              </h2>
+              <p className="text-text-main max-w-xl">
+                We&apos;re conveniently located and ready to welcome you.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {INFO_ITEMS.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: i * 0.1 }}
+                  whileHover={{ y: -4 }}
+                  className="glass-card rounded-2xl p-6 md:p-7 flex items-start gap-4 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(37,189,179,0.14)]"
+                >
+                  <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <item.icon size={22} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-800 mb-1">{item.title}</h4>
+                    {item.lines.map((line, j) => (
+                      <p key={j} className="text-sm text-text-main leading-relaxed">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex-[1.5] min-h-[350px] lg:min-h-[420px] rounded-3xl overflow-hidden glass-card p-1"
+          transition={{ duration: 0.6, delay: 0.12 }}
+          className="order-2 relative h-full min-h-[380px] md:min-h-[460px] lg:min-h-[620px]"
         >
-          <iframe
-            title="Kumar Dental Care Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.0868144412577!2d77.20659861508056!3d28.613939982425197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000"
-            width="100%"
-            height="100%"
-            style={{ border: 0, borderRadius: "1.25rem", minHeight: "350px" }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+          <div className="relative h-full rounded-2xl overflow-hidden shadow-[0_14px_36px_rgba(37,189,179,0.12)]">
+            <iframe
+              title="Kumar Dental Care Location"
+              src="https://maps.google.com/maps?q=New%20Delhi%2C%20Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-900/30 to-transparent" />
+            <a
+              href="https://maps.google.com/?q=New+Delhi,+Delhi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-5 left-5 glass rounded-full px-4 py-2 text-xs md:text-sm font-semibold text-slate-800 hover:text-primary transition-colors"
+            >
+              Open in Google Maps
+            </a>
+          </div>
         </motion.div>
+        </div>
       </div>
     </section>
   );
