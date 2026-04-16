@@ -57,18 +57,18 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 max-w-7xl mx-auto px-6 relative">
+    <section id="services" className="py-24 max-w-7xl mx-auto px-4 md:px-6 lg:px-12 xl:px-20 relative">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center mb-14 max-w-4xl mx-auto"
+        className="text-center mb-12 md:mb-14 max-w-4xl mx-auto"
       >
         <p className="text-primary font-semibold text-sm tracking-wider uppercase mb-3">
           Personalized Care
         </p>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-slate-800 tracking-tight mb-5 leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-800 tracking-tight mb-4 md:mb-5 leading-tight">
           Your Smile, Your Way: Trusted Dental Services for Every Need
         </h2>
         <p className="text-text-main max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
@@ -89,7 +89,7 @@ export default function Services() {
         <div className="mx-auto h-56 w-[85%] rounded-full bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 blur-3xl" />
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {SERVICES.map((service, i) => (
           <motion.article
             key={service.title}
@@ -98,7 +98,7 @@ export default function Services() {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.55, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
             whileHover={{ y: -8 }}
-            className="glass-card p-7 rounded-2xl flex flex-col items-start transition-all duration-300 hover:shadow-[0_12px_35px_rgba(37,189,179,0.16)] group relative overflow-hidden"
+            className="glass-card p-6 md:p-7 rounded-2xl flex flex-col items-start transition-all duration-300 hover:shadow-[0_12px_35px_rgba(37,189,179,0.16)] group relative overflow-hidden"
           >
             <motion.div
               aria-hidden="true"

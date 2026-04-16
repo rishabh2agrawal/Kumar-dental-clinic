@@ -35,7 +35,7 @@ export default function VisitUs() {
         >
           <div className="h-full flex flex-col justify-center">
             <div className="mb-8 md:mb-10">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-3">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-3">
                 Visit Us
               </h2>
               <p className="text-text-main max-w-xl">

@@ -46,7 +46,7 @@ export default function BookAppointment() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="max-w-7xl mx-auto px-6 relative z-10"
+        className="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 xl:px-20 relative z-10"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,8 +55,8 @@ export default function BookAppointment() {
           transition={{ duration: 0.55, delay: 0.05 }}
           className="grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(37,189,179,0.08)] border border-white/40"
         >
-          <div className="bg-white/85 p-7 md:p-10 lg:p-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-4 leading-tight">
+          <div className="bg-white/85 p-5 sm:p-7 md:p-10 lg:p-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-4 leading-tight">
               Let&apos;s Create Your Healthiest Smile Yet
             </h2>
             <p className="text-text-main leading-relaxed max-w-xl">
@@ -65,7 +65,7 @@ export default function BookAppointment() {
             </p>
             <p className="mt-3 text-sm font-medium text-primary">Ready to get started? Complete the form below</p>
 
-            <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+            <form onSubmit={handleSubmit} className="mt-7 md:mt-8 space-y-4 md:space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-2">
@@ -215,7 +215,7 @@ export default function BookAppointment() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold text-base shadow-[0_0_24px_rgba(37,189,179,0.32)] hover:shadow-[0_0_34px_rgba(0,152,219,0.35)] transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full min-h-11 py-3.5 md:py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold text-base shadow-[0_0_24px_rgba(37,189,179,0.32)] hover:shadow-[0_0_34px_rgba(0,152,219,0.35)] transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Send size={18} />
                 Book Appointment
@@ -223,7 +223,7 @@ export default function BookAppointment() {
             </form>
           </div>
 
-          <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-full">
+          <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-full">
             <img
               src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80"
               alt="Dental clinic interior"

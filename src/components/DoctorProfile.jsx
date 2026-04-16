@@ -5,15 +5,15 @@ import { Award, GraduationCap, Clock } from "lucide-react";
 
 export default function DoctorProfile() {
   return (
-    <section id="about" className="py-24 max-w-7xl mx-auto px-6">
-      <div className="flex flex-col lg:flex-row items-center gap-16">
+    <section id="about" className="py-24 max-w-7xl mx-auto px-4 md:px-6 lg:px-12 xl:px-20">
+      <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-12 lg:gap-16">
         {/* Doctor Image */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="flex-1 w-full max-w-md"
+          className="flex-1 w-full max-w-md lg:max-w-lg"
         >
           <div className="relative aspect-[3/4] rounded-3xl overflow-hidden glass-card">
             {/* Gradient avatar placeholder */}
@@ -46,7 +46,7 @@ export default function DoctorProfile() {
             <p className="text-primary font-semibold text-sm tracking-wider uppercase mb-2">
               Meet Your Dentist
             </p>
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-800 tracking-tight mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-800 tracking-tight mb-2">
               Dr. Rajesh Kumar
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-primary to-secondary rounded-full" />
@@ -60,7 +60,7 @@ export default function DoctorProfile() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm text-slate-700 font-medium"
+                className="flex items-center gap-2 px-3 md:px-4 py-2 rounded-full glass-card text-xs md:text-sm text-slate-700 font-medium"
               >
                 <item.icon size={16} className="text-primary" />
                 {item.label}
@@ -83,14 +83,14 @@ export default function DoctorProfile() {
         </motion.div>
       </div>
 
-      <div className="flex flex-col lg:flex-row-reverse items-center gap-16 mt-20">
+      <div className="flex flex-col lg:flex-row-reverse items-center gap-10 md:gap-12 lg:gap-16 mt-16 md:mt-20">
         {/* Doctor Image */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="flex-1 w-full max-w-md"
+          className="flex-1 w-full max-w-md lg:max-w-lg"
         >
           <div className="relative aspect-[3/4] rounded-3xl overflow-hidden glass-card">
             {/* Gradient avatar placeholder */}
@@ -123,7 +123,7 @@ export default function DoctorProfile() {
             <p className="text-primary font-semibold text-sm tracking-wider uppercase mb-2">
               Meet Your Dentist
             </p>
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-800 tracking-tight mb-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-800 tracking-tight mb-2">
               Dr. Ananya Sharma
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-primary to-secondary rounded-full" />
@@ -137,7 +137,7 @@ export default function DoctorProfile() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm text-slate-700 font-medium"
+                className="flex items-center gap-2 px-3 md:px-4 py-2 rounded-full glass-card text-xs md:text-sm text-slate-700 font-medium"
               >
                 <item.icon size={16} className="text-primary" />
                 {item.label}

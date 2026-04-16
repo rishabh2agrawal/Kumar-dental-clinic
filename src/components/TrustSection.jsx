@@ -76,9 +76,9 @@ export default function TrustSection() {
   };
 
   return (
-    <section id="why-us" className="w-full py-24 max-w-7xl mx-auto px-6">
+    <section id="why-us" className="w-full py-24 max-w-7xl mx-auto px-4 md:px-6 lg:px-12 xl:px-20">
       <div className="w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-14 items-start">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -86,7 +86,7 @@ export default function TrustSection() {
             transition={{ duration: 0.45 }}
             className="lg:col-span-5"
           >
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-5 md:mb-6 leading-tight">
               Why Patients <span className="font-semibold">Choose Us</span>
             </h2>
             <p className="text-text-main leading-relaxed text-base md:text-lg max-w-xl">
@@ -103,16 +103,16 @@ export default function TrustSection() {
             transition={{ duration: 0.45, delay: 0.08 }}
             className="lg:col-span-7"
           >
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
               {visibleHighlights.map((item) => (
                 <article
                   key={`${item.title}-${page}`}
-                  className="glass-card rounded-2xl min-h-[260px] sm:min-h-[300px] px-8 py-8 flex flex-col"
+                  className="glass-card rounded-2xl min-h-[240px] sm:min-h-[280px] px-6 md:px-8 py-6 md:py-8 flex flex-col"
                 >
                   <div className="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-8">
                     <item.icon size={30} strokeWidth={1.9} />
                   </div>
-                  <h3 className="text-slate-800 text-2xl leading-tight font-bold max-w-[14ch]">
+                  <h3 className="text-slate-800 text-xl md:text-2xl leading-tight font-bold max-w-[14ch]">
                     {item.title}
                   </h3>
                   <p className="mt-4 text-text-main text-sm leading-relaxed max-w-[28ch]">{item.desc}</p>
@@ -120,13 +120,13 @@ export default function TrustSection() {
               ))}
             </div>
 
-            <div className="flex items-center justify-between mt-8">
+            <div className="flex items-center justify-between mt-6 md:mt-8">
               <div className="flex items-center gap-3">
                 <button
                   type="button"
                   aria-label="Previous highlight"
                   onClick={handlePrev}
-                  className="w-12 h-12 rounded-full border border-slate-300 text-slate-700 inline-flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
+                  className="w-11 h-11 md:w-12 md:h-12 rounded-full border border-slate-300 text-slate-700 inline-flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
                 >
                   <ArrowLeft size={20} />
                 </button>
@@ -134,7 +134,7 @@ export default function TrustSection() {
                   type="button"
                   aria-label="Next highlight"
                   onClick={handleNext}
-                  className="w-12 h-12 rounded-full border border-slate-300 text-slate-700 inline-flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
+                  className="w-11 h-11 md:w-12 md:h-12 rounded-full border border-slate-300 text-slate-700 inline-flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
                 >
                   <ArrowRight size={20} />
                 </button>

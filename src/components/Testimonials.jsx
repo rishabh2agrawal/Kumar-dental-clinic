@@ -70,7 +70,7 @@ export default function Testimonials() {
       {/* Subtle background tint */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.03] to-transparent pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 mb-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 xl:px-20 mb-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ export default function Testimonials() {
           <p className="text-primary font-semibold text-sm tracking-wider uppercase mb-3">
             Reputation You Can Trust
           </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-4">
             What Our Patients Say
           </h2>
           <p className="text-text-main max-w-2xl mx-auto">
@@ -94,7 +94,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="mt-8 flex flex-wrap justify-center items-center gap-3"
+          className="mt-7 md:mt-8 flex flex-wrap justify-center items-center gap-2.5 md:gap-3"
         >
           <div className="glass-card rounded-full px-5 py-2.5 text-slate-800 font-bold text-sm md:text-base">
             Rated 4.9 <span className="text-yellow-400">★</span> on Google
@@ -108,8 +108,8 @@ export default function Testimonials() {
         </motion.div>
       </div>
 
-      <div className="px-6 max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="px-4 md:px-6 lg:px-12 xl:px-20 max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
         {REVIEWS.map((review, idx) => (
           <motion.div
             key={idx}
@@ -118,8 +118,8 @@ export default function Testimonials() {
             viewport={{ once: true, margin: "-30px" }}
             transition={{ duration: 0.45, delay: idx * 0.08 }}
             whileHover={{ y: -5 }}
-            className={`glass-card p-7 rounded-2xl flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_34px_rgba(37,189,179,0.14)] ${
-              review.tall ? "min-h-[260px]" : "min-h-[220px]"
+            className={`glass-card p-6 md:p-7 rounded-2xl flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_34px_rgba(37,189,179,0.14)] ${
+              review.tall ? "min-h-[250px]" : "min-h-[210px]"
             } ${review.featured ? "sm:col-span-2 lg:col-span-1" : ""}`}
           >
             <div>

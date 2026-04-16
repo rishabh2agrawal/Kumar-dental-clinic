@@ -25,6 +25,13 @@ export default function Navbar() {
     return () => unsub();
   }, [scrollY]);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
   return (
     <>
       <motion.header
@@ -32,10 +39,10 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          "fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl rounded-full transition-all duration-300",
+          "fixed top-3 md:top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1rem)] md:w-[95%] max-w-7xl rounded-full transition-all duration-300",
           isScrolled
-            ? "glass shadow-lg py-2.5 px-6"
-            : "glass py-3.5 px-6 shadow-sm"
+            ? "glass shadow-lg py-2.5 px-3 sm:px-4 md:px-6"
+            : "glass py-3 px-3 sm:px-4 md:px-6 shadow-sm"
         )}
       >
         <div className="flex items-center justify-between">
@@ -91,7 +98,7 @@ export default function Navbar() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={cn(
-              "md:hidden w-10 h-10 rounded-full flex items-center justify-center transition-colors text-slate-700 hover:bg-slate-100"
+              "md:hidden w-11 h-11 rounded-full flex items-center justify-center transition-colors text-slate-700 hover:bg-slate-100"
             )}
             aria-label="Toggle menu"
           >
@@ -104,31 +111,53 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-x-0 top-20 z-40 mx-4 glass rounded-3xl p-6 md:hidden shadow-xl"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[60] md:hidden bg-slate-900/35 backdrop-blur-[2px]"
+            onClick={() => setMobileOpen(false)}
           >
-            <nav className="flex flex-col gap-4">
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
+            <motion.aside
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
+              onClick={(e) => e.stopPropagation()}
+              className="ml-auto h-full w-[86%] max-w-sm glass border-l border-white/35 p-6 pt-5 shadow-2xl flex flex-col"
+            >
+              <div className="flex items-center justify-between mb-6">
+                <p className="text-sm font-semibold tracking-wide text-slate-700">Menu</p>
+                <button
                   onClick={() => setMobileOpen(false)}
-                  className="text-slate-700 font-medium text-base hover:text-primary transition-colors py-1"
+                  aria-label="Close menu"
+                  className="w-11 h-11 rounded-full inline-flex items-center justify-center text-slate-700 hover:bg-white/70 transition-colors"
                 >
-                  {link.name}
-                </a>
-              ))}
+                  <X size={22} />
+                </button>
+              </div>
+
+              <nav className="flex flex-col gap-2">
+                {NAV_LINKS.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-slate-800 font-semibold text-lg py-3 px-2 rounded-xl hover:bg-white/65 hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </nav>
+
               <a
                 href="#appointment"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 block text-center bg-primary text-white py-3 rounded-2xl font-semibold text-sm shadow-[0_0_20px_rgba(37,189,179,0.3)]"
+                className="mt-6 block text-center bg-gradient-to-r from-primary to-secondary text-white py-3.5 rounded-2xl font-semibold text-sm shadow-[0_0_24px_rgba(37,189,179,0.3)]"
               >
                 Book Appointment
               </a>
-            </nav>
+            </motion.aside>
           </motion.div>
         )}
       </AnimatePresence>

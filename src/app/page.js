@@ -8,7 +8,7 @@ import VisitUs from "@/components/VisitUs";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center w-full relative">
+    <main className="flex min-h-screen flex-col items-stretch w-full relative">
       <Hero />
       <TrustSection />
       <DoctorProfile />

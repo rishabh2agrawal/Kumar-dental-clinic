@@ -4,10 +4,10 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-slate-50/80 border-t border-slate-200/60 pt-14 pb-8">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 xl:px-20 grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 text-center md:text-left">
         {/* Brand */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2.5">
+        <div className="space-y-4 flex flex-col items-center md:items-start">
+          <div className="flex items-center gap-2.5 justify-center md:justify-start">
             <Image
               src="/Logo.png"
               alt="Kumar Dental Care"
@@ -50,12 +50,12 @@ export default function Footer() {
         </div>
 
         {/* Contact */}
-        <div>
+        <div className="flex flex-col items-center md:items-start">
           <h4 className="font-bold text-slate-800 mb-5 text-sm uppercase tracking-wider">
             Contact
           </h4>
           <ul className="space-y-3">
-            <li className="flex items-start gap-3 text-sm text-text-main">
+            <li className="flex items-start gap-3 text-sm text-text-main text-left">
               <MapPin size={16} className="text-primary mt-0.5 shrink-0" />
               <span>
                 123 Health Avenue, Wellness Block,
@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 pt-6 border-t border-slate-200/50 text-center text-sm text-text-main/70 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 xl:px-20 pt-6 border-t border-slate-200/50 text-center text-sm text-text-main/70 flex flex-col md:flex-row items-center justify-between gap-3">
         <p>&copy; {new Date().getFullYear()} Kumar Dental Care. All Rights Reserved.</p>
         <div className="flex gap-4">
           <a href="#" className="hover:text-primary transition-colors">

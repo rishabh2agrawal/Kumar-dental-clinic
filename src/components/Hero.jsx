@@ -14,7 +14,7 @@ const FADE_UP = {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative w-full min-h-screen h-[100dvh] flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative w-full min-h-[88svh] sm:min-h-screen h-[100dvh] flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <video
         autoPlay
@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/40 z-0" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6 lg:px-12 xl:px-20 text-center">
         <motion.div
           initial="hidden"
           animate="show"
@@ -52,7 +52,7 @@ export default function Hero() {
           {/* Headline */}
           <motion.h1
             variants={FADE_UP}
-            className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-5 md:mb-6"
           >
             Advanced Dental Care for{" "}
             <br className="hidden md:block" />
@@ -64,7 +64,7 @@ export default function Hero() {
           {/* Subtext */}
           <motion.p
             variants={FADE_UP}
-            className="mt-2 text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="mt-2 text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed"
           >
             Painless, precise, and patient-first treatments
           </motion.p>
@@ -72,12 +72,12 @@ export default function Hero() {
           {/* CTAs */}
           <motion.div
             variants={FADE_UP}
-            className="flex flex-col sm:flex-row gap-4 items-center justify-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center w-full"
           >
-            <GlassButton variant="primary" href="#appointment">
+            <GlassButton variant="primary" href="#appointment" className="w-full sm:w-auto min-h-11">
               Book Appointment
             </GlassButton>
-            <GlassButton variant="outline" href="tel:+919876543210">
+            <GlassButton variant="outline" href="tel:+919876543210" className="w-full sm:w-auto min-h-11">
               <Phone size={16} className="mr-2" />
               Call Now
             </GlassButton>
