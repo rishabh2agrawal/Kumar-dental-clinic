@@ -45,65 +45,70 @@ export default function Navbar() {
             : "glass py-3 px-4 md:px-6 shadow-sm"
         )}
       >
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#home" className="flex items-center gap-2.5 flex-1 min-w-0 pr-2">
-            <div className="relative w-9 h-9 overflow-hidden rounded-full flex items-center justify-center">
-              <Image
-                src="/Logo.png"
-                alt="Kumar Dental Care"
-                width={36}
-                height={36}
-                className="object-contain"
-              />
-            </div>
-            <span
-              className={cn(
-                "font-bold text-sm sm:text-base tracking-tight transition-colors text-primary block whitespace-nowrap overflow-hidden text-ellipsis"
-              )}
-            >
-              Kumar Dental Care
-            </span>
-          </a>
-
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-7">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
+        <div className="relative flex items-center justify-between">
+          {/* Left section: brand */}
+          <div className="flex-1 min-w-0">
+            <a href="#home" className="flex items-center gap-2.5 min-w-0 max-w-[85%] lg:max-w-none">
+              <div className="relative w-9 h-9 overflow-hidden rounded-full flex items-center justify-center shrink-0">
+                <Image
+                  src="/Logo.png"
+                  alt="Kumar Dental Care"
+                  width={36}
+                  height={36}
+                  className="object-contain"
+                />
+              </div>
+              <span
                 className={cn(
-                  "text-sm font-medium transition-colors text-text-main hover:text-primary"
+                  "font-bold text-sm sm:text-base tracking-tight transition-colors text-primary block whitespace-nowrap overflow-hidden text-ellipsis"
                 )}
               >
-                {link.name}
-              </a>
-            ))}
-          </nav>
+                Kumar Dental Care
+              </span>
+            </a>
+          </div>
 
-          {/* Desktop CTA */}
-          <a
-            href="#appointment"
-            className={cn(
-              "hidden md:inline-flex px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300",
-              isScrolled
-                ? "glass text-primary hover:shadow-[0_0_15px_rgba(37,189,179,0.25)]"
-                : "bg-primary text-white shadow hover:shadow-lg"
-            )}
-          >
-            Book Appointment
-          </a>
+          {/* Center section: desktop nav */}
+          <div className="hidden md:block absolute left-1/2 -translate-x-1/2">
+            <nav className="flex items-center gap-8">
+              {NAV_LINKS.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={cn(
+                    "text-sm font-medium transition-colors text-text-main hover:text-primary"
+                  )}
+                >
+                  {link.name}
+                </a>
+              ))}
+            </nav>
+          </div>
 
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className={cn(
-              "md:hidden w-11 h-11 rounded-full flex items-center justify-center transition-colors text-slate-700 hover:bg-slate-100 shrink-0"
-            )}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          {/* Right section: desktop CTA / mobile hamburger */}
+          <div className="flex flex-1 items-center justify-end gap-2">
+            <a
+              href="#appointment"
+              className={cn(
+                "hidden md:inline-flex px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300",
+                isScrolled
+                  ? "glass text-primary hover:shadow-[0_0_15px_rgba(37,189,179,0.25)]"
+                  : "bg-primary text-white shadow hover:shadow-lg"
+              )}
+            >
+              Book Appointment
+            </a>
+
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className={cn(
+                "md:hidden w-11 h-11 rounded-full flex items-center justify-center transition-colors text-slate-700 hover:bg-slate-100 shrink-0"
+              )}
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
       </motion.header>
 
