@@ -39,16 +39,8 @@ export default function Hero() {
             hidden: {},
             show: { transition: { staggerChildren: 0.15 } },
           }}
-          className="flex flex-col items-center"
+          className="flex flex-col items-center pt-2 sm:pt-3"
         >
-          {/* Badge */}
-          <motion.div
-            variants={FADE_UP}
-            className="inline-block mb-6 px-5 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium tracking-wide"
-          >
-            Kumar Dental Care
-          </motion.div>
-
           {/* Headline */}
           <motion.h1
             variants={FADE_UP}
