@@ -41,13 +41,13 @@ export default function Navbar() {
         className={cn(
           "fixed top-3 md:top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1rem)] md:w-[95%] max-w-7xl rounded-full transition-all duration-300",
           isScrolled
-            ? "glass shadow-lg py-2.5 px-3 sm:px-4 md:px-6"
-            : "glass py-3 px-3 sm:px-4 md:px-6 shadow-sm"
+            ? "glass shadow-lg py-2.5 px-4 md:px-6"
+            : "glass py-3 px-4 md:px-6 shadow-sm"
         )}
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2.5">
+          <a href="#home" className="flex items-center gap-2.5 flex-1 min-w-0 pr-2">
             <div className="relative w-9 h-9 overflow-hidden rounded-full flex items-center justify-center">
               <Image
                 src="/Logo.png"
@@ -59,7 +59,7 @@ export default function Navbar() {
             </div>
             <span
               className={cn(
-                "font-bold text-base tracking-tight hidden sm:block transition-colors text-primary"
+                "font-bold text-sm sm:text-base tracking-tight transition-colors text-primary block whitespace-nowrap overflow-hidden text-ellipsis"
               )}
             >
               Kumar Dental Care
@@ -98,7 +98,7 @@ export default function Navbar() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={cn(
-              "md:hidden w-11 h-11 rounded-full flex items-center justify-center transition-colors text-slate-700 hover:bg-slate-100"
+              "md:hidden w-11 h-11 rounded-full flex items-center justify-center transition-colors text-slate-700 hover:bg-slate-100 shrink-0"
             )}
             aria-label="Toggle menu"
           >
