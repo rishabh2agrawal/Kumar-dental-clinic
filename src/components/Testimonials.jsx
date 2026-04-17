@@ -66,16 +66,16 @@ const GoogleIcon = () => (
 
 export default function Testimonials() {
   return (
-    <section id="reviews" className="py-24 relative overflow-hidden">
+    <section id="reviews" className="py-20 md:py-24 lg:py-28 relative overflow-hidden">
       {/* Subtle background tint */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.03] to-transparent pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 xl:px-20 mb-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 mb-12 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           className="text-center"
         >
           <p className="text-primary font-semibold text-sm tracking-wider uppercase mb-3">
@@ -84,7 +84,7 @@ export default function Testimonials() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-4">
             What Our Patients Say
           </h2>
-          <p className="text-text-main max-w-2xl mx-auto">
+          <p className="text-slate-600 max-w-2xl mx-auto">
             Real reviews from people who trust us with their smiles.
           </p>
         </motion.div>
@@ -93,7 +93,7 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.08 }}
+          transition={{ duration: 0.5, delay: 0.1, ease: "easeInOut" }}
           className="mt-7 md:mt-8 flex flex-wrap justify-center items-center gap-2.5 md:gap-3"
         >
           <div className="glass-card rounded-full px-5 py-2.5 text-slate-800 font-bold text-sm md:text-base">
@@ -108,18 +108,18 @@ export default function Testimonials() {
         </motion.div>
       </div>
 
-      <div className="px-4 md:px-6 lg:px-12 xl:px-20 max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+      <div className="px-4 md:px-6 lg:px-12 max-w-7xl mx-auto relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {REVIEWS.map((review, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}
-            transition={{ duration: 0.45, delay: idx * 0.08 }}
-            whileHover={{ y: -5 }}
-            className={`glass-card p-6 md:p-7 rounded-2xl flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_34px_rgba(37,189,179,0.14)] ${
-              review.tall ? "min-h-[250px]" : "min-h-[210px]"
+            transition={{ duration: 0.5, delay: idx * 0.08, ease: "easeInOut" }}
+            whileHover={{ y: -6 }}
+            className={`glass-card p-6 md:p-7 rounded-2xl flex flex-col justify-between transition-all duration-500 ease-in-out hover:shadow-[0_14px_34px_rgba(37,189,179,0.14)] ${
+              review.tall ? "min-h-[270px]" : "min-h-[225px]"
             } ${review.featured ? "sm:col-span-2 lg:col-span-1" : ""}`}
           >
             <div>

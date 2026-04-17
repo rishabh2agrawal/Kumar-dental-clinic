@@ -8,8 +8,8 @@ const DENTAL_WALKTHROUGH_VIDEO =
   "/Indian_People_Video_Generation.mp4";
 
 const FADE_UP = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 60, damping: 14 } },
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut" } },
 };
 
 export default function Hero() {
@@ -21,14 +21,14 @@ export default function Hero() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover z-0"
       >
         <source src={DENTAL_WALKTHROUGH_VIDEO} type="video/mp4" />
       </video>
 
       {/* Subtle overlay to ensure text readability */}
-      <div className="absolute inset-0 bg-black/40 z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/55 via-slate-900/35 to-slate-900/45 z-0" />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-6 lg:px-12 xl:px-20 text-center">
@@ -37,14 +37,14 @@ export default function Hero() {
           animate="show"
           variants={{
             hidden: {},
-            show: { transition: { staggerChildren: 0.15 } },
+            show: { transition: { staggerChildren: 0.12 } },
           }}
-          className="flex flex-col items-center pt-2 sm:pt-3"
+          className="flex flex-col items-center pt-3 sm:pt-4"
         >
           {/* Headline */}
           <motion.h1
             variants={FADE_UP}
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-5 md:mb-6"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08] mb-5 md:mb-6"
           >
             Advanced Dental Care for{" "}
             <br className="hidden md:block" />

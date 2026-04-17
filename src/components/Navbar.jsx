@@ -39,10 +39,10 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          "fixed top-3 md:top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1rem)] md:w-[95%] max-w-7xl rounded-full transition-all duration-300",
+          "fixed top-3 md:top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1rem)] md:w-[95%] max-w-7xl rounded-full transition-all duration-500 ease-in-out",
           isScrolled
-            ? "glass shadow-lg py-2.5 px-4 md:px-6"
-            : "glass py-3 px-4 md:px-6 shadow-sm"
+            ? "glass bg-white/72 shadow-[0_10px_30px_rgba(15,23,42,0.12)] py-2.5 px-4 md:px-6"
+            : "glass bg-white/58 py-3 px-4 md:px-6 shadow-[0_6px_20px_rgba(15,23,42,0.06)]"
         )}
       >
         <div className="relative flex items-center justify-between">

@@ -57,12 +57,12 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 max-w-7xl mx-auto px-4 md:px-6 lg:px-12 xl:px-20 relative">
+    <section id="services" className="py-20 md:py-24 lg:py-28 max-w-7xl mx-auto px-4 md:px-6 lg:px-12 relative">
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
         className="text-center mb-12 md:mb-14 max-w-4xl mx-auto"
       >
         <p className="text-primary font-semibold text-sm tracking-wider uppercase mb-3">
@@ -71,7 +71,7 @@ export default function Services() {
         <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-800 tracking-tight mb-4 md:mb-5 leading-tight">
           Your Smile, Your Way: Trusted Dental Services for Every Need
         </h2>
-        <p className="text-text-main max-w-3xl mx-auto text-base md:text-lg leading-relaxed">
+        <p className="text-slate-600 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
           We provide complete dental care for families and individuals, from routine checkups to
           advanced cosmetic and restorative treatments. Every plan is tailored to your goals,
           comfort, and long-term oral health.
@@ -89,16 +89,16 @@ export default function Services() {
         <div className="mx-auto h-56 w-[85%] rounded-full bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 blur-3xl" />
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {SERVICES.map((service, i) => (
           <motion.article
             key={service.title}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.55, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
-            whileHover={{ y: -8 }}
-            className="glass-card p-6 md:p-7 rounded-2xl flex flex-col items-start transition-all duration-300 hover:shadow-[0_12px_35px_rgba(37,189,179,0.16)] group relative overflow-hidden"
+            transition={{ duration: 0.5, delay: i * 0.1, ease: "easeInOut" }}
+            whileHover={{ y: -6 }}
+            className="glass-card h-full p-6 md:p-7 rounded-2xl flex flex-col items-start transition-all duration-500 ease-in-out hover:shadow-[0_16px_36px_rgba(37,189,179,0.16)] group relative overflow-hidden"
           >
             <motion.div
               aria-hidden="true"
@@ -110,8 +110,8 @@ export default function Services() {
             <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
               <service.icon size={24} />
             </div>
-            <h4 className="text-lg font-bold text-slate-800 mb-1.5">{service.title}</h4>
-            <p className="text-sm text-text-main leading-relaxed">{service.desc}</p>
+            <h4 className="text-lg font-bold text-slate-800 mb-2 leading-tight">{service.title}</h4>
+            <p className="text-sm text-slate-600 leading-relaxed">{service.desc}</p>
           </motion.article>
         ))}
       </div>

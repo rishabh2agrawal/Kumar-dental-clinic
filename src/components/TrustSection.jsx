@@ -113,9 +113,9 @@ export default function TrustSection() {
   };
 
   return (
-    <section id="why-us" className="w-full py-24 max-w-7xl mx-auto px-4 md:px-6 lg:px-12 xl:px-20">
+    <section id="why-us" className="w-full py-20 md:py-24 lg:py-28 max-w-7xl mx-auto px-4 md:px-6 lg:px-12">
       <div className="w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-6 items-start">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -164,9 +164,9 @@ export default function TrustSection() {
                         className="glass-card rounded-2xl min-h-[250px] sm:min-h-[285px] md:min-h-[300px] px-6 md:px-8 py-6 md:py-8 flex flex-col shrink-0"
                         animate={{
                           opacity: isActive ? 1 : 0.84,
-                          scale: isActive ? 1.045 : 0.98,
+                          scale: isActive ? 1.05 : 0.98,
                           boxShadow: isActive
-                            ? "0 14px 36px rgba(37, 189, 179, 0.16)"
+                            ? "0 16px 40px rgba(37, 189, 179, 0.19)"
                             : "0 8px 24px rgba(15, 23, 42, 0.1)",
                         }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}

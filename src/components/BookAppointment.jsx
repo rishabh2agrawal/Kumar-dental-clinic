@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
+import Image from "next/image";
 
 export default function BookAppointment() {
   const [formData, setFormData] = useState({
@@ -37,35 +38,35 @@ export default function BookAppointment() {
   };
 
   return (
-    <section id="appointment" className="py-24 relative">
+    <section id="appointment" className="py-20 md:py-24 lg:py-28 relative">
       {/* Subtle background glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.03] to-transparent pointer-events-none" />
 
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 xl:px-20 relative z-10"
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 relative z-10"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.55, delay: 0.05 }}
+          transition={{ duration: 0.5, delay: 0.08, ease: "easeInOut" }}
           className="grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(37,189,179,0.08)] border border-white/40"
         >
           <div className="bg-white/85 p-5 sm:p-7 md:p-10 lg:p-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight mb-4 leading-tight">
               Let&apos;s Create Your Healthiest Smile Yet
             </h2>
-            <p className="text-text-main leading-relaxed max-w-xl">
+            <p className="text-slate-600 leading-relaxed max-w-xl">
               Whether you&apos;re looking for preventive care or a full smile transformation, our team
               is here to help you every step of the way.
             </p>
             <p className="mt-3 text-sm font-medium text-primary">Ready to get started? Complete the form below</p>
 
-            <form onSubmit={handleSubmit} className="mt-7 md:mt-8 space-y-4 md:space-y-5">
+            <form onSubmit={handleSubmit} className="mt-7 md:mt-8 space-y-5 md:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-2">
@@ -79,7 +80,7 @@ export default function BookAppointment() {
                     onChange={handleChange}
                     required
                     placeholder="Enter first name"
-                    className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary/30 transition-all"
+                    className="w-full min-h-11 px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/35 focus:shadow-[0_0_0_4px_rgba(37,189,179,0.14)] transition-all"
                   />
                 </div>
                 <div>
@@ -94,7 +95,7 @@ export default function BookAppointment() {
                     onChange={handleChange}
                     required
                     placeholder="Enter last name"
-                    className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary/30 transition-all"
+                    className="w-full min-h-11 px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/35 focus:shadow-[0_0_0_4px_rgba(37,189,179,0.14)] transition-all"
                   />
                 </div>
               </div>
@@ -112,7 +113,7 @@ export default function BookAppointment() {
                     onChange={handleChange}
                     required
                     placeholder="+91 98765 43210"
-                    className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary/30 transition-all"
+                    className="w-full min-h-11 px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/35 focus:shadow-[0_0_0_4px_rgba(37,189,179,0.14)] transition-all"
                   />
                 </div>
                 <div>
@@ -127,7 +128,7 @@ export default function BookAppointment() {
                     onChange={handleChange}
                     required
                     placeholder="you@example.com"
-                    className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary/30 transition-all"
+                    className="w-full min-h-11 px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/35 focus:shadow-[0_0_0_4px_rgba(37,189,179,0.14)] transition-all"
                   />
                 </div>
               </div>
@@ -142,7 +143,7 @@ export default function BookAppointment() {
                   value={formData.reason}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary/30 transition-all"
+                  className="w-full min-h-11 px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/35 focus:shadow-[0_0_0_4px_rgba(37,189,179,0.14)] transition-all"
                 >
                   <option value="">Select reason</option>
                   <option value="checkup">General Checkup</option>
@@ -166,7 +167,7 @@ export default function BookAppointment() {
                     value={formData.date}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary/30 transition-all"
+                    className="w-full min-h-11 px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/35 focus:shadow-[0_0_0_4px_rgba(37,189,179,0.14)] transition-all"
                   />
                 </div>
                 <div>
@@ -179,7 +180,7 @@ export default function BookAppointment() {
                     value={formData.time}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary/30 transition-all"
+                    className="w-full min-h-11 px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/35 focus:shadow-[0_0_0_4px_rgba(37,189,179,0.14)] transition-all"
                   >
                     <option value="">Select time</option>
                     <option value="09:00">9:00 AM</option>
@@ -207,13 +208,13 @@ export default function BookAppointment() {
                   value={formData.notes}
                   onChange={handleChange}
                   placeholder="Share any symptoms or preferences"
-                  className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/25 focus:border-primary/30 transition-all resize-none"
+                  className="w-full min-h-24 px-4 py-3 rounded-2xl bg-white border border-slate-200/70 text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/35 focus:shadow-[0_0_0_4px_rgba(37,189,179,0.14)] transition-all resize-none"
                 />
               </div>
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full min-h-11 py-3.5 md:py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold text-base shadow-[0_0_24px_rgba(37,189,179,0.32)] hover:shadow-[0_0_34px_rgba(0,152,219,0.35)] transition-all duration-300 flex items-center justify-center gap-2"
               >
@@ -224,9 +225,11 @@ export default function BookAppointment() {
           </div>
 
           <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-full">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80"
               alt="Dental clinic interior"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
             />

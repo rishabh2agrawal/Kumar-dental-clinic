@@ -5,14 +5,14 @@ import { Award, GraduationCap, Clock } from "lucide-react";
 
 export default function DoctorProfile() {
   return (
-    <section id="about" className="py-24 max-w-7xl mx-auto px-4 md:px-6 lg:px-12 xl:px-20">
+    <section id="about" className="py-20 md:py-24 lg:py-28 max-w-7xl mx-auto px-4 md:px-6 lg:px-12">
       <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-12 lg:gap-16">
         {/* Doctor Image */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           className="flex-1 w-full max-w-md lg:max-w-lg"
         >
           <div className="relative aspect-[3/4] rounded-3xl overflow-hidden glass-card">
@@ -39,7 +39,7 @@ export default function DoctorProfile() {
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           className="flex-1 space-y-6"
         >
           <div>
@@ -89,7 +89,7 @@ export default function DoctorProfile() {
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           className="flex-1 w-full max-w-md lg:max-w-lg"
         >
           <div className="relative aspect-[3/4] rounded-3xl overflow-hidden glass-card">
@@ -116,7 +116,7 @@ export default function DoctorProfile() {
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           className="flex-1 space-y-6"
         >
           <div>
